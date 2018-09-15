@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>My map</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+    </head>
+
+    <body>
+	<div id="mymap" style="height: 800px"></div>
+	<script type="text/javascript">var map = L.map('mymap', {center: [60, 16],zoom: 5});
+	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 5,
+               minZoom: 5
+            }).addTo(map);
+			var OrebroIcon = L.icon({
+    iconUrl: 'orebro.png', // url that links to the icon image file
+    iconSize:     [38, 38], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+			var HeidelbergIcon = L.icon({
+    iconUrl: 'heidelberg.png', // url that links to the icon image file
+    iconSize:     [38, 38], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+			var RoskildeIcon = L.icon({
+    iconUrl: 'Roskilde2.png', // url that links to the icon image file
+    iconSize:     [38, 38], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+			var StockholmIcon = L.icon({
+    iconUrl: 'Stockholm2.png', // url that links to the icon image file
+    iconSize:     [38, 38], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+            var TurkuIcon = L.icon({
+    iconUrl: 'Turku.png', // url that links to the icon image file
+    iconSize:     [38, 38], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+			
+	var marker1 = L.marker([49.3988,8.6724],{icon:HeidelbergIcon}).addTo(map);
+	var marker2 = L.marker([59.2753,15.2134],{icon:OrebroIcon}).addTo(map);
+	var marker3 = L.marker([55.6419,12.0878],{icon:RoskildeIcon}).addTo(map);
+	var marker4 = L.marker([59.3289,18.0649],{icon:StockholmIcon}).addTo(map);
+	var marker5 = L.marker([60.454510,22.264824],{icon:TurkuIcon}).addTo(map);
+	
+	var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Heidelberg_Schloss_Alte_Br%C3%BCcke_20100626.jpg/1200px-Heidelberg_Schloss_Alte_Br%C3%BCcke_20100626.jpg" alt="Heidelberg" width="250">';
+	var pic2 = '<img src="https://images2.alphacoders.com/459/459523.jpg" alt="Orebro" width="250">';
+	var pic3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Viking_Ship_Museum_Roskilde.JPG" alt="Roskilde Viking" width="250">';
+	var pic4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Nationalmuseum%2C_Stockholm.jpg" alt="Stockholm museum" width="250">';
+	var pic5 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Turku_Cathedral_profile.jpg" alt="Turku" width="250">';
+	
+	marker1.bindPopup(pic1 + '<br>' + '<p style="color:black; font-weight:bold"> Heidelberg Castle</p>');
+    marker2.bindPopup(pic2 + '<br>' + '<p style="color:green; font-weight:bold"> Orebro Castle</p>');
+	marker3.bindPopup(pic3 + '<br>' + '<p style="color:red; font-weight:bold"> Viking museum in Roskilde Denmark</p>');
+    marker4.bindPopup(pic4 + '<br>' + '<p style="color:blue; font-weight:bold"> Swedish National museum</p>');
+	marker5.bindPopup(pic5 + '<br>' + '<p style="color:skyblue; font-weight:bold"> Turku Cathedral</p>');
+	
+
+	</script>
+
+    </body>
+</html>
